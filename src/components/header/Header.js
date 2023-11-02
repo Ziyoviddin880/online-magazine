@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-function Header() {
+function Header({ person }) {
   return (
     <header>
       <div className="container">
@@ -18,9 +18,14 @@ function Header() {
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-            <li>
-              <NavLink to="/login">Log In / Register</NavLink>
-            </li>
+            {console.log(person)}
+            {!person ? (
+              <li>
+                <NavLink to="/register">Log In / Register</NavLink>
+              </li>
+            ) : (
+              <li>{person.fullName}</li>
+            )}
           </ul>
         </nav>
       </div>

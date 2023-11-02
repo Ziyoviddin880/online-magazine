@@ -1,0 +1,83 @@
+@import "../../variables.scss";
+
+.log-reg {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .btns {
+    max-width: 50rem;
+    margin-bottom: 4rem;
+    a {
+      text-decoration: none;
+      color: $color-black;
+      padding: 1rem 2rem;
+      font-size: $genreal-size;
+      background-color: $color-cream;
+      border-radius: 1rem;
+      &:first-child {
+        margin-right: 2rem;
+      }
+      &.active {
+        background-color: $color-btn;
+        color: $color-white;
+      }
+    }
+  }
+  .box {
+    max-width: 50rem;
+    padding: 2rem;
+    border: 1px solid $color-black;
+    border-radius: 2rem;
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    .alert {
+      width: 100%;
+      background-color: $color-cream;
+      font-size: $genreal-size;
+      color: red;
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+    label {
+      //   width: 100%;
+      font-size: $genreal-size;
+    }
+    input {
+      width: 100%;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      font-size: $text-size;
+      border: none;
+      background-color: $color-cream;
+    }
+    input:focus-visible {
+      outline: none;
+    }
+    .show-hide {
+      padding: 1rem;
+      font-size: $text-size;
+      margin-bottom: 1rem;
+      border: none;
+      background-color: white;
+      cursor: pointer;
+    }
+    .submit-btn {
+      padding: 1rem 2rem;
+      font-size: $genreal-size;
+      background-color: $color-success-btn;
+      border-radius: 1rem;
+      color: $color-white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  }
+}
