@@ -17,17 +17,22 @@
       font-size: $genreal-size;
       background-color: $color-cream;
       border-radius: 1rem;
+      transition: $transition-03s;
       &:first-child {
         margin-right: 2rem;
       }
       &.active {
-        background-color: $color-btn;
+        background-color: $color-black;
         color: $color-white;
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
       }
     }
   }
   .box {
-    max-width: 50rem;
+    max-width: 40rem;
     padding: 2rem;
     border: 1px solid $color-black;
     border-radius: 2rem;
@@ -66,18 +71,28 @@
       font-size: $text-size;
       margin-bottom: 1rem;
       border: none;
-      background-color: white;
+      background-color: $color-white;
       cursor: pointer;
     }
     .submit-btn {
       padding: 1rem 2rem;
       font-size: $genreal-size;
-      background-color: $color-success-btn;
+      background-color: $color-black;
       border-radius: 1rem;
       color: $color-white;
       border: none;
       cursor: pointer;
       width: 100%;
+      transition: $transition-03s;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+      }
     }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .log-reg {
+    padding: 0 3rem;
   }
 }

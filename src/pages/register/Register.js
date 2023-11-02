@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Register({ registerUser }) {
+function Register({ registerUser, user }) {
   const fullName = useRef();
   const email = useRef();
   const password = useRef();
   const [showPassword, setShowPassword] = useState(false);
+  const [err, setErr] = useState(false);
   const navigate = useNavigate();
 
   const registerSubmit = (e) => {
@@ -17,8 +18,16 @@ function Register({ registerUser }) {
       email: email.current.value,
       password: password.current.value,
     };
-    registerUser(newUser);
-    navigate("/");
+    const hasUser = user.find((val) => {
+      return val.email === newUser.email;
+    });
+    if (!hasUser) {
+      registerUser(newUser);
+      navigate("/");
+      setErr(true);
+    } else {
+      setErr(true);
+    }
   };
   return (
     <div className="log-reg">
@@ -38,6 +47,7 @@ function Register({ registerUser }) {
             placeholder="Your FullName"
           />
           <label htmlFor="email">Email</label>
+          {err && <div className="alert">This email is registered</div>}
           <input
             ref={email}
             required

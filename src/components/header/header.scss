@@ -1,0 +1,154 @@
+@import "../../variables.scss";
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  nav {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo-img {
+      width: 10rem;
+      height: 4.2rem;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    ul {
+      li {
+        list-style: none;
+        display: inline-block;
+        &:not(:last-child) {
+          margin-right: 3rem;
+        }
+        a {
+          text-decoration: none;
+          color: $color-black;
+          font-size: $genreal-size;
+          padding: 1rem 1.5rem;
+          transition: $transition-03s;
+          &.active {
+            background-color: $color-black;
+            color: $color-white;
+          }
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+          }
+        }
+      }
+    }
+    .close-icon {
+      display: none;
+    }
+    .phone-burger {
+      display: none;
+    }
+  }
+  .right-menu {
+    display: none;
+  }
+  .left-block {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  header {
+    nav {
+      ul {
+        li {
+          &:not(:last-child) {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 870px) {
+  header {
+    nav {
+      ul {
+        display: none;
+      }
+      .phone-burger {
+        display: block;
+        font-size: $genreal-size;
+        &:hover {
+          opacity: 0.8;
+          transition: $transition-03s;
+        }
+      }
+    }
+    .right-menu {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      ul {
+        margin-top: 10rem;
+        li {
+          list-style: none;
+
+          &:not(:last-child) {
+            margin-bottom: 2rem;
+          }
+          a {
+            margin-left: 1rem;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: $color-white;
+            font-size: $genreal-size;
+            &.active {
+              background-color: $color-white;
+              color: $color-black;
+            }
+          }
+        }
+      }
+      i {
+        font-size: $genreal-size;
+        color: $color-white;
+        position: absolute;
+        right: 10%;
+        margin-top: 3.1rem;
+        &:hover {
+          opacity: 0.8;
+          transition: $transition-03s;
+        }
+      }
+    }
+    .dBlock {
+      display: block;
+    }
+    .dNone {
+      display: none;
+    }
+    .left-block {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100vh;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  header {
+    .right-menu {
+      width: 70%;
+    }
+    .left-block {
+      width: 30%;
+    }
+  }
+}
