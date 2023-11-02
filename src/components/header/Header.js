@@ -12,7 +12,7 @@ function Header({ person }) {
         <nav>
           <div className="logo-img">
             <NavLink to="/">
-              <img src="images/logo-img.png" alt="Logo Image" />
+              <img src="images/logo-img.png" alt="Logo" />
             </NavLink>
           </div>
           <Menu person={person} />
