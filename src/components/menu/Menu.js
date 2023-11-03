@@ -1,24 +1,34 @@
 import { NavLink } from "react-router-dom";
 import "./menu.scss";
 
-function Menu({ person }) {
+function Menu({ person, setOpenMenu }) {
   return (
     <ul>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink onClick={() => setOpenMenu(false)} to="/">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/category">Category</NavLink>
+        <NavLink onClick={() => setOpenMenu(false)} to="/category">
+          Category
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/news">News</NavLink>
+        <NavLink onClick={() => setOpenMenu(false)} to="/news">
+          News
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink onClick={() => setOpenMenu(false)} to="/contact">
+          Contact
+        </NavLink>
       </li>
       {!person ? (
         <li>
-          <NavLink to="/register">Log In / Register</NavLink>
+          <NavLink onClick={() => setOpenMenu(false)} to="/register">
+            Log In / Register
+          </NavLink>
         </li>
       ) : (
         ""

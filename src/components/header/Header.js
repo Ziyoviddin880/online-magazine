@@ -17,13 +17,15 @@ function Header({ person }) {
               <img src="images/logo-img.png" alt="Logo" />
             </NavLink>
           </div>
-          <Menu person={person} />
+          <Menu person={person} setOpenMenu={setOpenMenu} />
           <div className={person ? "burger-user dBlock" : "burger-user"}>
             <div className="icons">
               {person && (
                 <div className="person" onClick={() => setOpenUser(!openUser)}>
-                  {person.fullName.split(" ")[0].slice(0, 1).toUpperCase() +
-                    person.fullName.split(" ")[1].slice(0, 1).toUpperCase()}
+                  {person.fullName.split(" ").length < 2
+                    ? person.fullName.split(" ")[0].slice(0, 1).toUpperCase()
+                    : person.fullName.split(" ")[0].slice(0, 1).toUpperCase() +
+                      person.fullName.split(" ")[1].slice(0, 1).toUpperCase()}
                 </div>
               )}
 
@@ -49,7 +51,7 @@ function Header({ person }) {
           onClick={() => setOpenMenu(false)}
           className="fa-solid fa-xmark close-icon"
         ></i>
-        <Menu person={person} />
+        <Menu person={person} setOpenMenu={setOpenMenu} />
       </div>
       <div
         onClick={() => setOpenMenu(false)}
