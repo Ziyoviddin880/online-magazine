@@ -12,8 +12,8 @@ function Login({ user, loginUser }) {
     e.preventDefault();
     const oldUser = user.find((val) => {
       return (
-        val.email === email.current.value &&
-        val.password === password.current.value
+        val.email === email.current.value.trim() &&
+        val.password === password.current.value.trim()
       );
     });
     if (oldUser) {
@@ -51,7 +51,11 @@ function Login({ user, loginUser }) {
             />
             <button
               type="button"
-              onClick={() => setShowPassword(!showPassword)}
+              onClick={() => {
+                password.current.value.trim() !== ""
+                  ? setShowPassword(!showPassword)
+                  : setShowPassword(false);
+              }}
               className="show-hide"
             >
               {showPassword ? "Hide Password" : "Show Password"}

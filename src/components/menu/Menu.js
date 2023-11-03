@@ -21,7 +21,7 @@ function Menu({ person }) {
           <NavLink to="/register">Log In / Register</NavLink>
         </li>
       ) : (
-        <li>{person.fullName}</li>
+        ""
       )}
     </ul>
   );

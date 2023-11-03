@@ -14,9 +14,9 @@ function Register({ registerUser, user }) {
   const registerSubmit = (e) => {
     e.preventDefault();
     const newUser = {
-      fullName: fullName.current.value,
-      email: email.current.value,
-      password: password.current.value,
+      fullName: fullName.current.value.trim(),
+      email: email.current.value.trim(),
+      password: password.current.value.trim(),
     };
     const hasUser = user.find((val) => {
       return val.email === newUser.email;
@@ -65,7 +65,11 @@ function Register({ registerUser, user }) {
           />
           <button
             type="button"
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => {
+              password.current.value.trim() !== ""
+                ? setShowPassword(!showPassword)
+                : setShowPassword(false);
+            }}
             className="show-hide"
           >
             {showPassword ? "Hide Password" : "Show Password"}

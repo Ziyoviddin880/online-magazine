@@ -1,0 +1,54 @@
+@import "../../variables.scss";
+
+.relative {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.close-userInfo {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.userInfo {
+  position: absolute;
+  padding: 4rem 1rem;
+  background-color: $color-black;
+  color: $color-white;
+  top: 6.8rem;
+  right: 3rem;
+  width: 30rem;
+  border-radius: 2rem;
+  .info-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .person-info {
+      background-color: $color-white;
+      color: $color-black;
+      width: 4.8rem;
+      height: 4.8rem;
+      border-radius: 50%;
+      font-size: $genreal-size;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .info-fullName,
+    .info-fullEmail {
+      font-size: $text-size;
+    }
+    .info-fullEmail {
+      opacity: 0.8;
+    }
+    .email-info {
+      font-size: $genreal-size;
+    }
+  }
+}

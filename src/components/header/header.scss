@@ -19,6 +19,29 @@ header {
         object-fit: cover;
       }
     }
+    .burger-user {
+      display: none;
+      .icons {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .person {
+        width: 4.8rem;
+        height: 4.8rem;
+        border-radius: 50%;
+        font-size: $genreal-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-white;
+        background-color: $color-black;
+        cursor: pointer;
+      }
+    }
+    .dBlock {
+      display: block;
+    }
     ul {
       li {
         list-style: none;
@@ -74,6 +97,9 @@ header {
 @media only screen and (max-width: 870px) {
   header {
     nav {
+      .burger-user {
+        display: block;
+      }
       ul {
         display: none;
       }
