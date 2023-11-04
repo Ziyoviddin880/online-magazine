@@ -29,27 +29,27 @@ function Footer() {
           </div>
           <div className="social">
             <div className="social-brand">
-              <a href="#">
+              <a href="https:///t.me/ziyoviddin_1">
                 <i class="fa-brands fa-telegram"></i>
               </a>
             </div>
             <div className="social-brand">
-              <a href="#">
+              <a href="https://www.instagram.com/ziyoviddin__1/">
                 <i class="fa-brands fa-instagram"></i>
               </a>
             </div>
             <div className="social-brand">
-              <a href="#">
+              <a href="https://www.facebook.com/ziyoviddin.abdurashidov">
                 <i class="fa-brands fa-facebook"></i>
               </a>
             </div>
             <div className="social-brand">
-              <a href="#">
+              <a href="https://www.youtube.com/channel/UC0KYpDFWGRU2i_6rYQW1KOQ">
                 <i class="fa-brands fa-youtube"></i>
               </a>
             </div>
             <div className="social-brand">
-              <a href="#">
+              <a href="https://twitter.com/Ziyoviddin__1">
                 <i class="fa-brands fa-twitter"></i>
               </a>
             </div>
