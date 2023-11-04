@@ -1,0 +1,100 @@
+@import "../../variables.scss";
+
+.contact {
+  padding: 3rem 0;
+  .contact-title {
+    font-weight: bold;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+  .question-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    .question {
+      width: 40%;
+      label {
+        font-size: $text-size;
+      }
+      input,
+      textarea {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: $text-size;
+        border: none;
+        background-color: $color-cream;
+      }
+
+      textarea:focus-visible,
+      input:focus-visible {
+        outline: none;
+      }
+      textarea {
+        min-height: 15rem;
+        resize: vertical;
+      }
+      .info {
+        font-size: $text-size;
+        opacity: 0.8;
+        margin-bottom: 1.5rem;
+      }
+      .contact-btn {
+        padding: 1rem 2rem;
+        font-size: $genreal-size;
+        background-color: $color-black;
+        border-radius: 1rem;
+        color: $color-white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        transition: $transition-03s;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+          color: white;
+        }
+      }
+    }
+    .contact-img {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .contact {
+    .question-block {
+      flex-direction: row-reverse;
+      gap: 4%;
+      .question {
+        width: 48%;
+      }
+      .contact-img {
+        width: 48%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 870px) {
+  .contact {
+    .question-block {
+      flex-direction: column-reverse;
+      gap: 4rem;
+      .question {
+        width: 100%;
+      }
+      .contact-img {
+        width: 100%;
+      }
+    }
+  }
+}
