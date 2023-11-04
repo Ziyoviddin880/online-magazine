@@ -1,0 +1,8 @@
+@import "../../variables.scss";
+.author {
+  padding: 2rem 1rem;
+  background-color: rgba($color-black, 0.9);
+  color: $color-white;
+  text-align: center;
+  font-size: $genreal-size;
+}

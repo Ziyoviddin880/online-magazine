@@ -1,0 +1,85 @@
+@import "../../variables.scss";
+
+footer {
+  background-color: $color-black;
+  padding: 5rem 0;
+  .footer-box {
+    display: flex;
+    justify-content: space-between;
+    .footer-logo {
+      width: 10rem;
+      height: 4.2rem;
+      //   overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .link-box {
+      ul {
+        li {
+          list-style: none;
+          padding: 1rem;
+          transition: $transition-03s;
+          a {
+            text-decoration: none;
+            color: $color-white;
+            font-size: $genreal-size;
+            transition: $transition-03s;
+          }
+          &:hover {
+            background-color: rgba($color-white, 0.8);
+            a {
+              color: $color-black;
+            }
+          }
+        }
+      }
+    }
+    .social {
+      display: flex;
+      gap: 2rem;
+      .social-brand {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-white;
+        transition: $transition-03s;
+        &:hover {
+          background-color: rgba($color-white, 0.8);
+        }
+        i {
+          font-size: $genreal-size;
+          color: $color-black;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  footer {
+    .footer-box {
+      .social {
+        width: 20rem;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  footer {
+    .footer-box {
+      gap: 2rem;
+      .social {
+        width: 16rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
