@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
+    gap: 1%;
     flex-wrap: wrap;
     .question {
       width: 40%;
@@ -59,6 +59,7 @@
       }
     }
     .contact-img {
+      width: 58%;
       img {
         width: 100%;
         object-fit: cover;
