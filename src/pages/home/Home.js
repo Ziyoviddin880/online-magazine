@@ -1,7 +1,11 @@
-import React from "react";
+import Products from "../../container/Products/Products";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div className="container">
+      <Products />
+    </div>
+  );
 }
 
 export default Home;

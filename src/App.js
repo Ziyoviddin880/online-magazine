@@ -6,6 +6,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import { createContext } from "react";
+
 // Layout
 import RootLayout from "./layout/RootLayout";
 
@@ -16,7 +18,10 @@ import News from "./pages/news/News";
 import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import http from "./services/http";
+
+export const ProductsContext = createContext();
 
 function App() {
   const [user, setUser] = useState([
@@ -27,11 +32,25 @@ function App() {
     },
   ]);
   const [person, setPerson] = useState("");
+
+  // Get all products
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await http.get("/products");
+      setProducts(data.data);
+    };
+    fetchData();
+  }, []);
+
+  // Register User
   const registerUser = (newUser) => {
     let allUser = [...user, newUser];
     setUser(allUser);
     setPerson(newUser);
   };
+
+  // Login User
   const loginUser = (loginPerson) => {
     setPerson(loginPerson);
   };
@@ -58,9 +77,11 @@ function App() {
   );
 
   return (
-    <div className="App">
-      <RouterProvider router={routes} />
-    </div>
+    <ProductsContext.Provider value={products}>
+      <div className="App">
+        <RouterProvider router={routes} />
+      </div>
+    </ProductsContext.Provider>
   );
 }
 
