@@ -32,13 +32,16 @@ function App() {
     },
   ]);
   const [person, setPerson] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // Get all products
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const data = await http.get("/products");
       setProducts(data.data);
+      setLoading(false);
     };
     fetchData();
   }, []);
@@ -77,7 +80,7 @@ function App() {
   );
 
   return (
-    <ProductsContext.Provider value={products}>
+    <ProductsContext.Provider value={{ products, loading }}>
       <div className="App">
         <RouterProvider router={routes} />
       </div>

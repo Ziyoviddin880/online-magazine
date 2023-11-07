@@ -3,14 +3,19 @@ import { ProductsContext } from "../../App";
 import { useContext } from "react";
 
 function Products() {
-  const products = useContext(ProductsContext);
+  const context = useContext(ProductsContext);
   return (
     <div className="all-products">
+      {console.log(context)}
       <div className="products-title">All Products</div>
+      {context.loading && (
+        <div className="loading">
+          <img src="images/loading-gif.gif" alt="" />
+        </div>
+      )}
       <div className="products-container">
-        {console.log(products)}
-        {products.length > 0
-          ? products.map((product) => (
+        {context.products.length > 0
+          ? context.products.map((product) => (
               <div key={product.id} className="product-item">
                 <div className="product-img">
                   <img src={product.image} alt="Product" />
@@ -25,7 +30,7 @@ function Products() {
                       <span>Rate: </span> {product.rating.rate}
                     </div>
                     <div className="count">
-                      <span>Cout: </span> {product.rating.count}
+                      <span>Count: </span> {product.rating.count}
                     </div>
                   </div>
                   <button className="product-btn">Button</button>
