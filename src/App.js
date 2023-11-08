@@ -19,6 +19,8 @@ import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Product from "./container/product/Product";
+import NoteFound from "./pages/noteFound/NoteFound";
+
 import { useState } from "react";
 import { useFetch } from "./useFetch/useFetch";
 
@@ -67,6 +69,7 @@ function App() {
           path="login"
           element={<Login user={user} loginUser={loginUser} />}
         />
+        <Route path="*" element={<NoteFound />} />
       </Route>
     )
   );
