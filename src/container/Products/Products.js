@@ -1,24 +1,26 @@
 import "./products.scss";
 import { ProductsContext } from "../../App";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 function Products() {
   const context = useContext(ProductsContext);
   return (
     <div className="all-products">
-      {console.log(context)}
       <div className="products-title">All Products</div>
       {context.loading && (
         <div className="loading">
-          <img src="images/loading-gif.gif" alt="" />
+          <img src="images/loading-gif.gif" alt="Loading" />
         </div>
       )}
       <div className="products-container">
-        {context.products.length > 0
-          ? context.products.map((product) => (
+        {context.data
+          ? context.data.map((product) => (
               <div key={product.id} className="product-item">
                 <div className="product-img">
-                  <img src={product.image} alt="Product" />
+                  <NavLink to={"products/" + product.id}>
+                    <img src={product.image} alt="Product" />
+                  </NavLink>
                 </div>
 
                 <div className="product-info">

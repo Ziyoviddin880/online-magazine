@@ -18,8 +18,9 @@ import News from "./pages/news/News";
 import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import Product from "./container/product/Product";
 import { useState, useEffect } from "react";
-import http from "./services/http";
+import { useFetch } from "./useFetch/useFetch";
 
 export const ProductsContext = createContext();
 
@@ -32,19 +33,10 @@ function App() {
     },
   ]);
   const [person, setPerson] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [url, setUrl] = useState("https://fakestoreapi.com/products");
 
   // Get all products
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const data = await http.get("/products");
-      setProducts(data.data);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+  const { data, loading } = useFetch(url);
 
   // Register User
   const registerUser = (newUser) => {
@@ -63,6 +55,7 @@ function App() {
       <Route>
         <Route path="/" element={<RootLayout person={person} />}>
           <Route path="/" element={<Home />} />
+          <Route path="products/:id" element={<Product />} />
           <Route path="category" element={<Category />} />
           <Route path="news" element={<News />} />
           <Route path="contact" element={<Contact />} />
@@ -80,7 +73,7 @@ function App() {
   );
 
   return (
-    <ProductsContext.Provider value={{ products, loading }}>
+    <ProductsContext.Provider value={{ data, loading }}>
       <div className="App">
         <RouterProvider router={routes} />
       </div>
