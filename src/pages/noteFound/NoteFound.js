@@ -1,17 +1,15 @@
 import "./noteFound.scss";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import Author from "../../components/author/Author";
+import { NavLink } from "react-router-dom";
 
 function NoteFound() {
   return (
     <>
-      <Header person={false} />
-      <div className="noteFound">
+      <div className="notFound">
         <img src="images/noteFound.jpg" alt="Page Not Found" />
       </div>
-      <Footer />
-      <Author />
+      <div className="notFound-button">
+        <NavLink to="">Home</NavLink>
+      </div>
     </>
   );
 }

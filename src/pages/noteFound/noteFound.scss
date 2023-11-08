@@ -1,3 +1,23 @@
-.noteFound {
+@import "../../variables.scss";
+.notFound {
   text-align: center;
+  height: 50rem;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.notFound-button {
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: $color-black;
+    font-size: $genreal-size;
+    padding: 1rem 1.5rem;
+    background-color: $color-black;
+    color: white;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
 }
