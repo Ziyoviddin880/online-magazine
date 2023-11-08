@@ -19,7 +19,7 @@ import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Product from "./container/product/Product";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useFetch } from "./useFetch/useFetch";
 
 export const ProductsContext = createContext();
@@ -33,10 +33,9 @@ function App() {
     },
   ]);
   const [person, setPerson] = useState("");
-  const [url, setUrl] = useState("https://fakestoreapi.com/products");
 
   // Get all products
-  const { data, loading } = useFetch(url);
+  const { data, loading } = useFetch("https://fakestoreapi.com/products");
 
   // Register User
   const registerUser = (newUser) => {
