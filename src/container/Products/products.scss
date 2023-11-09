@@ -8,6 +8,10 @@
   .loading {
     display: flex;
     justify-content: center;
+    img {
+      max-width: 30rem;
+      object-fit: cover;
+    }
   }
   .products-container {
     width: 100%;
@@ -107,6 +111,11 @@
 }
 @media only screen and (max-width: 400px) {
   .all-products {
+    .loading {
+      img {
+        width: 20rem;
+      }
+    }
     .products-container {
       .product-item {
         width: 100%;
