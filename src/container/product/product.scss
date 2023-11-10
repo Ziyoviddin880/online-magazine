@@ -1,4 +1,13 @@
 @import "../../variables.scss";
+
+.product {
+  .isLoading {
+    text-align: center;
+    img {
+      max-width: 30rem;
+    }
+  }
+}
 .product-element {
   margin: 3rem 0;
   display: flex;

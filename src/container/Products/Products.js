@@ -2,6 +2,7 @@ import "./products.scss";
 import { ProductsContext } from "../../App";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import Basket from "../basket/Basket";
 
 function Products() {
   const context = useContext(ProductsContext);
@@ -41,6 +42,7 @@ function Products() {
             ))
           : ""}
       </div>
+      <Basket />
     </div>
   );
 }

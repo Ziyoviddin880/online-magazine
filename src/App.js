@@ -51,6 +51,8 @@ function App() {
     setPerson(loginPerson);
   };
 
+  // Buy Products
+
   const routes = createBrowserRouter(
     createRoutesFromElements(
       <Route>

@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.basket {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  .forImg {
+    width: 6rem;
+    height: 6rem;
+    position: relative;
+    i {
+      font-size: 5rem;
+      color: red;
+    }
+    .product-number {
+      position: absolute;
+      right: -0.5rem;
+      top: -0.5rem;
+      font-weight: bold;
+      display: flex;
+      font-size: $genreal-size;
+      justify-content: center;
+      color: red;
+      align-items: center;
+    }
+  }
+}
