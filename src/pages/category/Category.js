@@ -1,7 +1,11 @@
 import React from "react";
 
 function Category() {
-  return <div>Category</div>;
+  return (
+    <div className="container">
+      <h1>Category</h1>
+    </div>
+  );
 }
 
 export default Category;
